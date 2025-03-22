@@ -1,27 +1,27 @@
 [
 	{
-		"id": 1,
-		"author": "Jane Doe",
-		"review": "The food was amazing! I loved the atmosphere and the service was great."
+	  "id": 1,
+	  "author": "ITS_mattie",
+	  "review": "Checked out Voxel Paris — insane!! Felt alive just walking through it."
 	},
 	{
-		"id": 2,
-		"author": "John Smith",
-		"review": "The best Italian food I've ever had. I can't wait to come back!"
+	  "id": 2,
+	  "author": "Tyyppi_KPS",
+	  "review": "Tokyo skyline looks stunning. Super smooth exploring experience."
 	},
 	{
-		"id": 3,
-		"author": "Alice Johnson",
-		"review": "The pasta was perfectly cooked and the sauce was delicious. I highly recommend this restaurant."
+	  "id": 3,
+	  "author": "Enderpeaarl",
+	  "review": "Seeing places I've visited IRL made Minecraft feel fresh again. Highly recommend checking it out."
 	},
 	{
-		"id": 4,
-		"author": "Bob Brown",
-		"review": "The pizza was fantastic! I will definitely be ordering from here again."
+	  "id": 4,
+	  "author": "Jcplayz",
+	  "review": "Landmarks on Voxel Earth are scary accurate. Loved exploring it."
 	},
 	{
-		"id": 5,
-		"author": "Sarah Wilson",
-		"review": "The tiramisu was to die for. I will be dreaming about it for weeks."
+	  "id": 5,
+	  "author": "AkumaSparky",
+	  "review": "Voxel Earth is insane. Explored Rome and it blew my mind. Every Minecraft fan needs to see this."
 	}
-]
+  ]

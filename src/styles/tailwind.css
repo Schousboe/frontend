@@ -1,14 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/*
+  This is a regular base.css with the following changes:
+    - Removed styles for 'code' and 'pre' tags
+    - Removed 'list-style-none' from list-items
+*/
 
-html,
-body {
-	@apply h-full antialiased scroll-smooth;
+@tailwind components;
+@tailwind utilities;
+
+input.w-full, textarea.w-full {
+  outline: groove;
+  padding: 10px;
+}
+
+.swiper-pagination-bullet {
+  border-radius: 0 !important;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: theme('borderColor.DEFAULT', currentColor);
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  /* font-family: theme('fontFamily.sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");  */
+  font-family: Minecraft, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 body {
-	@apply h-full scroll-smooth font-inter text-gray-700;
+  margin: 0;
+  line-height: inherit;
+}
+
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+}
+
+abbr:where([title]) {
+  text-decoration: underline dotted;
 }
 
 h1,
@@ -17,225 +63,191 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-bold text-balance break-words;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
-h1,
-.h1 {
-	@apply text-5xl lg:text-7xl;
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-h2,
-.h2 {
-	@apply text-5xl lg:text-6xl;
+b,
+strong {
+  font-weight: bolder;
 }
 
-h3,
-.h3 {
-	@apply text-4xl lg:text-5xl;
+/*
+code,
+kbd,
+samp,
+pre {
+  font-family: theme('fontFamily.mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+  font-size: 1em;
+}
+*/
+
+small {
+  font-size: 80%;
 }
 
-h4,
-.h4 {
-	@apply text-3xl lg:text-4xl;
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
-h5,
-.h5 {
-	@apply text-2xl lg:text-3xl;
+sub {
+  bottom: -0.25em;
 }
 
-h6,
-.h6 {
-	@apply text-xl lg:text-2xl;
+sup {
+  top: -0.5em;
 }
 
-p {
-	@apply leading-relaxed;
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
 }
 
-.button {
-	@apply rounded-full px-4 py-3 text-base transition duration-300 font-bold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
-}
-
-.button-green {
-	@apply bg-brand-green hover:bg-brand-green/80 text-white focus-visible:outline-brand-green;
-}
-
-.button-red {
-	@apply bg-brand-red hover:bg-brand-red/80 text-white focus-visible:outline-brand-red;
-}
-
-.menu-item-highlighted.menu-item-highlighted {
-	@apply text-white bg-brand-green px-4 rounded-full py-1.5 hover:bg-opacity-80 hover:text-white;
-}
-
-.menu-item-active.menu-item-highlighted {
-	@apply hover:text-white;
-}
-
-.menu-item-active:not(.menu-item-highlighted) {
-	@apply text-brand-green font-bold;
-}
-
-[x-cloak] {
-	display: none !important;
-}
-
-section.bg-white + section.bg-white > .container,
-section.bg-brand-green + section.bg-brand-green > .container,
-section.bg-brand-red + section.bg-brand-red > .container {
-	@apply pt-0;
-}
-
+button,
 input,
+optgroup,
+select,
 textarea {
-	@apply border border-gray-300 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-brand-green;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-label {
-	@apply block text-sm/6 font-medium;
+button,
+select {
+  text-transform: none;
 }
 
-/* Swiper */
-.swiper-pagination-bullet-active.swiper-pagination-bullet-active {
-	@apply bg-brand-red;
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
 }
 
-/* inter-300 - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 300;
-	src: url("/fonts/inter/inter-v18-latin-300.woff2") format("woff2");
-}
-/* inter-300italic - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: italic;
-	font-weight: 300;
-	src: url("/fonts/inter/inter-v18-latin-300italic.woff2") format("woff2");
-}
-/* inter-regular - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 400;
-	src: url("/fonts/inter/inter-v18-latin-regular.woff2") format("woff2");
-}
-/* inter-italic - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: italic;
-	font-weight: 400;
-	src: url("/fonts/inter/inter-v18-latin-italic.woff2") format("woff2");
-}
-/* inter-500 - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 500;
-	src: url("/fonts/inter/inter-v18-latin-500.woff2") format("woff2");
-}
-/* inter-500italic - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: italic;
-	font-weight: 500;
-	src: url("/fonts/inter/inter-v18-latin-500italic.woff2") format("woff2");
-}
-/* inter-600 - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 600;
-	src: url("/fonts/inter/inter-v18-latin-600.woff2") format("woff2");
-}
-/* inter-600italic - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: italic;
-	font-weight: 600;
-	src: url("/fonts/inter/inter-v18-latin-600italic.woff2") format("woff2");
-}
-/* inter-700 - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 700;
-	src: url("/fonts/inter/inter-v18-latin-700.woff2") format("woff2");
-}
-/* inter-700italic - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: italic;
-	font-weight: 700;
-	src: url("/fonts/inter/inter-v18-latin-700italic.woff2") format("woff2");
-}
-/* inter-900 - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 900;
-	src: url("/fonts/inter/inter-v18-latin-900.woff2") format("woff2");
-}
-/* inter-900italic - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Inter";
-	font-style: italic;
-	font-weight: 900;
-	src: url("/fonts/inter/inter-v18-latin-900italic.woff2") format("woff2");
+a.button {
+	padding: 10px 20px;
 }
 
-.loader {
-	width: 1rem;
-	height: 1rem;
-	display: block;
-	margin-right: 1rem;
-	position: relative;
-	border: 3px solid #000;
-	border-radius: 50%;
-	box-sizing: border-box;
-	animation: animloader 2s linear infinite;
-}
-.loader::after {
-	content: "";
-	box-sizing: border-box;
-	width: 2px;
-	height: 12px;
-	background: #000;
-	transform: rotate(-45deg);
-	position: absolute;
-	bottom: -12px;
-	left: 16px;
+:-moz-focusring {
+  outline: auto;
 }
 
-@keyframes animloader {
-	0% {
-		transform: translate(-8px, -8px);
-	}
-	25% {
-		transform: translate(-8px, 8px);
-	}
-	50% {
-		transform: translate(8px, 8px);
-	}
-	75% {
-		transform: translate(8px, -8px);
-	}
-	100% {
-		transform: translate(-8px, -8px);
-	}
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+summary {
+  display: list-item;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: theme('colors.gray.400', #9ca3af);
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+:disabled {
+  cursor: default;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+[hidden] {
+  display: none;
 }

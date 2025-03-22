@@ -11,9 +11,10 @@ import Heading from "~/components/Heading.astro";
 import WideImage from "~/components/WideImage.astro";
 import ReviewSlider from "~/components/ReviewSlider.astro";
 
-// Images
-import PizzaHero from "~/assets/images/pizza-hero.png";
-import Pizza from "~/assets/images/pizza.png";
+// Images (you can replace these with real Voxel Earth images if desired)
+// import PizzaHero from "~/assets/images/pizza-hero.png";
+import PizzaHero from "~/assets/images/pexels-shvetsa-5953523.jpg"; 
+import Pizza from "~/assets/images/pizza.png"; 
 import Spaghetti from "~/assets/images/spaghetti.png";
 import Fish from "~/assets/images/fish.png";
 import DecorativeImage from "~/assets/images/pexels-shvetsa-5953523.jpg";
@@ -22,294 +23,413 @@ import Dessert from "~/assets/images/dessert.png";
 import Mussels from "~/assets/images/mussels2.png";
 ---
 
-<Layout title="Home" pageTitle="Home" description="Welcome to our restaurant!">
-	<Section class:list={"bg-white"}>
-		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<Badge title="il ristorante italiana" />
-				<h1 class="font-black">Real Italian food in a real Italian restaurant...</h1>
+<Layout title="Home" pageTitle="Voxel Earth" description="Voxel Earth: Explore real-world 3D Tiles in Minecraft">
+  <!-- Hero Section 1 -->
+  <Section class:list={"bg-white"}>
+    <Hero>
+      <div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
+        <Badge title="3D Tiles to Minecraft" />
+        <h1 class="font-black">Real Places, in Minecraft</h1>
 
-				<p>
-					Experience the taste of Italy with our authentic dishes made from the finest ingredients. Indulge in
-					our wide variety of pizzas, pastas, and desserts, all crafted with love and tradition. Whether
-					you're dining in or taking out, we promise a memorable culinary experience.
-				</p>
+        <p>
+          <strong>Voxel Earth</strong> is your ticket to a fully voxelized globe inside
+          Minecraft! Our pipeline takes Google Photorealistic 3D Tiles (and other data sources)
+          and seamlessly transforms them into blocks. From the bustling streets of Tokyo to
+          the deserts of Arizona, explore it all in Minecraft at <code>play.voxelearth.org</code>.
+        </p>
 
-				<span class="text-brand-green font-medium">✔ We also deliver</span>
+        <span class="text-brand-green font-medium">✔ Powered by GPU voxelization</span>
 
-				<div class="mt-8 flex items-center gap-x-8">
-					<Button url="/book">Book now</Button>
-					<ButtonCallUs />
-				</div>
-			</div>
-			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={PizzaHero}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-					loading={"eager"}
-					fetchpriority={"high"}
-				/>
-			</div>
-		</Hero>
-	</Section>
+        <div class="mt-8 flex items-center gap-x-8">
+          <Button url="/play">Join Server</Button>
+          <ButtonCallUs label="Learn More" linkTo="https://paper.voxelearth.org" />
+        </div>
+      </div>
+      <!-- <div slot="hero-content-right">
+        <Picture
+          class:list={"mx-auto"}
+          src={PizzaHero}
+          height={600}
+          formats={["avif", "webp"]}
+          alt="Sample Voxel Earth screenshot"
+          loading={"eager"}
+          fetchpriority={"high"}
+        />
+      </div> -->
 
-	<WideImage image={DecorativeImage} alt="Just an image" class:list={"aspect-video lg:aspect-[16/6]"} />
-
-	<Section class:list={"bg-white"}>
-		<Heading>
-			<h2 slot="heading-title" class="font-black text-brand-green h2">Our dishes</h2>
-			<p slot="heading-content">
-				Explore our selection of authentic Italian dishes, from classic pizzas to homemade pastas.
-			</p>
-		</Heading>
-
-		<Grid>
-			<div slot="grid-content-1">
-				<div class="flex flex-col items-center prose text-center">
-					<Picture
-						class:list={"not-prose w-full h-auto"}
-						src={Pizza}
-						formats={["avif", "webp"]}
-						alt="A description of my image."
-					/>
-					<h3 class="h4 mt-0 font-black">Pasta &amp; Spaghetti</h3>
-					<p>
-						Pasta is a staple of Italian cuisine, with a rich history dating back centuries. It comes in
-						various shapes and sizes, each suited to different sauces and preparations.
-					</p>
-				</div>
-			</div>
-
-			<div slot="grid-content-2">
-				<div class="flex flex-col items-center prose text-center">
-					<Picture
-						class:list={"not-prose w-full h-auto"}
-						src={Spaghetti}
-						formats={["avif", "webp"]}
-						alt="A description of my image."
-					/>
-					<h3 class="h4 mt-0 font-black">Pasta &amp; Spaghetti</h3>
-					<p>
-						Pasta is a staple of Italian cuisine, with a rich history dating back centuries. It comes in
-						various shapes and sizes, each suited to different sauces and preparations.
-					</p>
-				</div>
-			</div>
-
-			<div slot="grid-content-3">
-				<div class="flex flex-col items-center prose text-center">
-					<Picture
-						class:list={"not-prose w-full h-auto"}
-						src={Fish}
-						formats={["avif", "webp"]}
-						alt="A description of my image."
-					/>
-					<h3 class="h4 mt-0 font-black">Pasta &amp; Spaghetti</h3>
-					<p>
-						Pasta is a staple of Italian cuisine, with a rich history dating back centuries. It comes in
-						various shapes and sizes, each suited to different sauces and preparations.
-					</p>
-				</div>
-			</div>
-		</Grid>
-	</Section>
-
-	<Section class:list={"bg-white"}>
-		<Hero>
-			<div slot="hero-content-left" class="prose lg:order-2">
-				<h1 class="font-black">Pizza</h1>
-
-				<p>
-					Pizza is a beloved dish that originated in Italy and has since become a global sensation. Its
-					versatility allows for endless combinations of toppings, from classic margherita with fresh
-					tomatoes, mozzarella, and basil, to more adventurous options like barbecue chicken or vegan cheese.
-				</p>
-
-				<p>
-					Whether enjoyed at a cozy pizzeria or delivered to your doorstep, pizza brings people together and
-					satisfies cravings like no other food. Beyond its delicious taste, pizza also holds cultural
-					significance. It is often associated with gatherings, celebrations, and comfort.
-				</p>
-
-				<div class="mt-8">
-					<Button url="/menu">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-							class="size-5 inline-block"
-							aria-hidden="true"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
-								clip-rule="evenodd"></path>
-						</svg>
-						View menu
-					</Button>
-				</div>
-			</div>
-			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={PizzaHero}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-				/>
-			</div>
-		</Hero>
-	</Section>
-
-	<Section class:list={"bg-white"}>
-		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<Badge color="red" title="delicious" />
-				<h2 class="font-black h2 my-4">Plate of the week</h2>
-
-				<span class="text-brand-red text-2xl font-bold italic">Fresh Mussels!</span>
-
-				<p>
-					Our plate of the week is a delicious dish that changes every week. This week, we're featuring fresh
-					mussels cooked in a white wine and garlic sauce, served with a side of crispy fries. Don't miss out
-					on this limited-time offer!
-				</p>
-
-				<div class="mt-8">
-					<Button color="red" url="/book">Book now</Button>
-				</div>
-			</div>
-			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={Mussels}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-				/>
-			</div>
-		</Hero>
-	</Section>
-
-	<!-- Reviews -->
-	<Section class:list={"bg-brand-red/20 relative"}>
-		<div class="py-16">
-			<Hero>
-				<div slot="hero-content-left" class="prose max-w-none order-2">
-					<div class="text-center not-prose">
-						<Badge color="white" title="reviews" />
-					</div>
-					<h2 slot="heading-title" class="font-black h4 text-center mt-0 mb-4">What our customers say...</h2>
-					<div slot="heading-content">
-						<p class="text-center">
-							Don't just take our word for it. Read what our customers have to say about their dining
-							experience at our restaurant.
-						</p>
-
-						<ReviewSlider />
-					</div>
-				</div>
-
-				<div slot="hero-content-right">
-					<Picture src={reviewAuthors} alt="Review authors" class="w-full h-auto" />
-				</div>
-			</Hero>
+		<!-- <div slot="hero-content-right" style="position: relative; display: inline-block; width: 520px; height: 560px;">
+		<Picture
+		src={PizzaHero}
+		height={560}
+		formats={["avif", "webp"]}
+		alt="Pixel Block Demo"
+		loading="eager"
+		fetchpriority="high"
+		style="display: block; width: 520px; height: 560px; object-fit: cover;"
+		/>
+		<div style="position: absolute; top: 0; left: 0; width: 520px; height: 560px; pointer-events: none; z-index: 1; 
+		background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2280%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22120%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22160%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22280%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22320%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22400%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22440%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22320%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%2280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2280%22%20y%3D%2280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22120%22%20y%3D%2280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22440%22%20y%3D%2280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22200%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%22280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22320%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22320%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2280%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22280%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22320%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22360%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22400%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
 		</div>
+		</div> -->
 
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 1440 320"
-			class="absolute h-40 w-full top-0 inset-x-0 rotate-180"
-			preserveAspectRatio="none"
-			><path
-				fill="#ffffff"
-				fill-opacity="1"
-				d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-			></path>
-		</svg>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 1440 320"
-			class="absolute h-40 w-full bottom-0 inset-x-0"
-			preserveAspectRatio="none"
-			><path
-				fill="#ffffff"
-				fill-opacity="1"
-				d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-			></path>
-		</svg>
-	</Section>
 
-	<!-- Desserts -->
-	<Section class:list={"bg-white"}>
-		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none order-2">
-				<Badge title="dolce" />
-				<h2 slot="heading-title" class="font-black text-brand-green h2 my-4">Desserts</h2>
-				<div slot="heading-content">
-					<p>
-						Indulge in our selection of sweet treats, from classic tiramisu to decadent chocolate cake. Our
-						desserts are the perfect way to end your meal on a high note.
-					</p>
+		<div 
+		slot="hero-content-right" 
+		class="relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+	  >
+		<!-- The image is absolutely positioned to fill the container -->
+		<Picture
+		  src={PizzaHero}
+		  height={560}
+		  formats={["avif", "webp"]}
+		  alt="Pixel Block Demo"
+		  loading="eager"
+		  fetchpriority="high"
+		  class="absolute inset-0 w-full h-full object-cover"
+		/>
+	  
+		<!-- Overlay is also absolutely positioned, ensuring perfect alignment -->
+		<div
+		  class="absolute inset-0 pointer-events-none z-10"
+		 style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M40%200%20h40%20v40%20h-40%20Z%20M80%200%20h40%20v40%20h-40%20Z%20M120%200%20h40%20v40%20h-40%20Z%20M160%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M320%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M440%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M480%2040%20h40%20v40%20h-40%20Z%20M0%2080%20h40%20v40%20h-40%20Z%20M80%2080%20h40%20v40%20h-40%20Z%20M120%2080%20h40%20v40%20h-40%20Z%20M440%2080%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M40%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M320%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
+		</div>
+	  </div>
+	  
 
-					<p>
-						Experience the taste of Italy with our authentic dishes made from the finest ingredients.
-						Indulge in our wide variety of pizzas, pastas, and desserts, all crafted with love and
-						tradition. Whether you're dining in or taking out, we promise a memorable culinary experience.
-					</p>
+	  </div>
+	  
+    </Hero>
+  </Section>
 
-					<div class="mt-8">
-						<Button url="/menu">See our menu</Button>
-					</div>
-				</div>
+  <!-- Wide Decorative Image -->
+  <WideImage image={DecorativeImage} alt="Voxel Earth wide image" class:list={"aspect-video lg:aspect-[16/6]"} />
+
+  <!-- Section: Key Features -->
+  <Section class:list={"bg-white"}>
+    <Heading>
+      <h2 slot="heading-title" class="font-black text-brand-green h2">Key Features</h2>
+      <p slot="heading-content">
+        Dive into stunning recreations of real-world landmarks, generated automatically by
+        advanced voxelization. Explore cities, terrain, and even extraterrestrial data sets.
+      </p>
+    </Heading>
+
+    <Grid>
+      <div slot="grid-content-1">
+        <div class="flex flex-col items-center prose text-center">
+          <Picture
+            class:list={"not-prose w-full h-auto"}
+            src={Pizza}
+            formats={["avif", "webp"]}
+            alt="Voxel world illustration"
+          />
+          <h3 class="h4 mt-0 font-black">Global 3D Tiles</h3>
+          <p>
+            We integrate with multiple public (and private) 3D Tiles data sources, including
+            Google Earth and other open datasets. Roam entire cities or natural wonders without
+            leaving your Minecraft client.
+          </p>
+        </div>
+      </div>
+
+      <div slot="grid-content-2">
+        <div class="flex flex-col items-center prose text-center">
+          <Picture
+            class:list={"not-prose w-full h-auto"}
+            src={Spaghetti}
+            formats={["avif", "webp"]}
+            alt="Another voxel demonstration"
+          />
+          <h3 class="h4 mt-0 font-black">GPU-Accelerated Conversion</h3>
+          <p>
+            Our pipeline uses GPU-based voxelization for fast, on-demand chunk generation.
+            Large photogrammetry data is handled quickly, ensuring minimal waiting time
+            and high detail where it counts.
+          </p>
+        </div>
+      </div>
+
+      <div slot="grid-content-3">
+        <div class="flex flex-col items-center prose text-center">
+          <Picture
+            class:list={"not-prose w-full h-auto"}
+            src={Fish}
+            formats={["avif", "webp"]}
+            alt="3D tile pipeline demonstration"
+          />
+          <h3 class="h4 mt-0 font-black">Rich Textures</h3>
+          <p>
+            Each photogrammetry texture is transferred into Minecraft block coloration,
+            giving you an immersive experience. Buildings, water, foliage—everything is
+            mapped into the Minecraft palette.
+          </p>
+        </div>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- Section: Global 3D Tiles (Hero) -->
+  <Section class:list={"bg-white"}>
+    <Hero>
+      <div slot="hero-content-left" class="prose lg:order-2">
+        <h1 class="font-black">Global 3D Tiles in Action</h1>
+
+        <p>
+          Wondering how your city looks when turned into voxels? We load the highest resolution
+          3D Tiles available, convert them to blocks, and stream them into Minecraft
+          just like normal chunks. It’s a seamless experience—just walk around, and the
+          real-world data loads.
+        </p>
+
+        <p>
+          We rely on a combination of open-source libraries and custom GPU code to
+          handle the complexity of photorealistic data. This ensures a stable, visually
+          appealing environment that captures the spirit of each real-world site.
+        </p>
+
+        <div class="mt-8">
+          <Button url="/menu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-5 inline-block mb-1"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            Learn More
+          </Button>
+        </div>
+      </div>
+      <!-- <div slot="hero-content-right">
+        <Picture
+          class:list={"mx-auto"}
+          src={PizzaHero}
+          height={600}
+          formats={["avif", "webp"]}
+          alt="Voxel Earth pipeline screenshot"
+        />
+      </div> -->
+
+	  <!-- <div slot="hero-content-right" style="position: relative; display: inline-block; width: 520px; height: 560px;">
+		<Picture
+		src={PizzaHero}
+		height={560}
+		formats={["avif", "webp"]}
+		alt="Pixel Block Demo"
+		loading="eager"
+		fetchpriority="high"
+		style="display: block; width: 520px; height: 560px; object-fit: cover;"
+		/>
+		<div style="position: absolute; top: 0; left: 0; width: 520px; height: 560px; pointer-events: none; z-index: 1; 
+		background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22280%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22400%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22320%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%2280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%2280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22200%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22200%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22320%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%22320%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22320%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22440%22%20y%3D%22360%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22360%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22400%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22440%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22240%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2280%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22120%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22160%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22240%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22280%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22320%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22360%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22400%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22440%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
+		</div>
+		</div> -->
+
+		<!-- <div slot="hero-content-right" class="relative inline-block w-full lg:w-[520px] h-auto lg:h-[560px]">
+			<Picture
+			  src={PizzaHero}
+			  height={560}
+			  formats={["avif", "webp"]}
+			  alt="Pixel Block Demo"
+			  loading="eager"
+			  fetchpriority="high"
+			  class="block w-full h-auto lg:w-[520px] lg:h-[560px] object-cover"
+			  />
+			<div class="absolute top-0 left-0 w-full h-full pointer-events-none z-10"
+			style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22280%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22400%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22320%22%20y%3D%2240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%2280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%2280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22200%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22200%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22240%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22280%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22320%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%22320%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22320%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22440%22%20y%3D%22360%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22360%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22400%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22440%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22240%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22480%22%20y%3D%22480%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2240%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%2280%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22120%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22160%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22240%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22280%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22320%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22360%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22400%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3Crect%20x%3D%22440%22%20y%3D%22520%22%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22white%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
 			</div>
+		  </div>
+		   -->
 
-			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={Dessert}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-				/>
-			</div>
-		</Hero>
-	</Section>
+		   <div 
+		   slot="hero-content-right" 
+		   class="relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+		 >
+		   <!-- The image is absolutely positioned to fill the container -->
+		   <Picture
+			 src={PizzaHero}
+			 height={560}
+			 formats={["avif", "webp"]}
+			 alt="Pixel Block Demo"
+			 loading="eager"
+			 fetchpriority="high"
+			 class="absolute inset-0 w-full h-full object-cover"
+		   />
+		 
+		   <!-- Overlay is also absolutely positioned, ensuring perfect alignment -->
+		   <div
+			 class="absolute inset-0 pointer-events-none z-10"
+			style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M40%2080%20h40%20v40%20h-40%20Z%20M480%2080%20h40%20v40%20h-40%20Z%20M0%20200%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20240%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20320%20h40%20v40%20h-40%20Z%20M480%20320%20h40%20v40%20h-40%20Z%20M440%20360%20h40%20v40%20h-40%20Z%20M480%20360%20h40%20v40%20h-40%20Z%20M0%20400%20h40%20v40%20h-40%20Z%20M0%20440%20h40%20v40%20h-40%20Z%20M0%20480%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M240%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M120%20520%20h40%20v40%20h-40%20Z%20M160%20520%20h40%20v40%20h-40%20Z%20M240%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%20M440%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
 
-	<!-- Contact -->
-	<Section class:list={"bg-white"}>
-		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none">
-				<Badge color="red" title="benvenuto" />
-				<h2 slot="heading-title" class="font-black text-brand-red h2 my-4">Drop by and say hello</h2>
-				<div slot="heading-content">
-					<p>
-						We're located in the heart of the city, just a stone's throw away from the main square. Our
-						restaurant is the perfect place to enjoy a delicious meal with friends and family.
-					</p>
+		   </div>
+		 </div>
+		 
+		  
+		  
 
-					<span class="text-brand-red font-medium">
-						✔ We also do take-away, so you can enjoy your food at home
-					</span>
+    </Hero>
+  </Section>
 
-					<div class="mt-8">
-						<Button color="red" url="/book">Book a table</Button>
-					</div>
-				</div>
-			</div>
+  <!-- Section: Location of the Week -->
+  <Section class:list={"bg-white"}>
+    <Hero>
+      <div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
+        <Badge color="location" title="Featured Location" />
+        <h2 class="font-black h2 my-4">Location of the Week</h2>
 
-			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={Dessert}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-				/>
-			</div>
-		</Hero>
-	</Section>
+        <span class="text-brand-location text-2xl font-bold italic">Mount Fuji, Japan!</span>
+
+        <p>
+          Every week we feature a new region in higher detail. Right now, we’ve got
+          Mount Fuji and the surrounding areas fully voxelized at a super high resolution,
+          letting you climb a real-world mountain block by block.
+        </p>
+
+        <div class="mt-8">
+          <Button color="red" url="/play">Play Now</Button>
+        </div>
+      </div>
+      <div slot="hero-content-right">
+        <Picture
+          class:list={"mx-auto"}
+          src={Mussels}
+          height={600}
+          formats={["avif", "webp"]}
+          alt="Placeholder or real mountaintop voxel screenshot"
+        />
+      </div>
+    </Hero>
+  </Section>
+
+  <!-- Reviews Section (Testimonial slider) -->
+  <div class="bg-block-ice-packed bg-tile-25">
+	<Section class:list={"bg-white/60 relative"}>
+  <!-- <Section class:list={"bg-sky-500/20 relative"}> -->
+    <div class="py-16">
+      <Hero>
+        <div slot="hero-content-left" class="prose max-w-none order-2">
+          <div class="text-center not-prose">
+            <Badge color="white" title="player reviews" />
+          </div>
+          <h2 slot="heading-title" class="font-black h4 text-center mt-0 mb-4">What Our Explorers Say...</h2>
+          <div slot="heading-content">
+            <p class="text-center">
+              Don’t just take our word for it. Check out these community impressions about
+              exploring real-world data in Minecraft through Voxel Earth.
+            </p>
+
+            <ReviewSlider />
+          </div>
+        </div>
+
+        <div slot="hero-content-right">
+          <Picture src={reviewAuthors} alt="Happy explorers" class="w-full h-auto" />
+        </div>
+      </Hero>
+    </div>
+
+    <!-- White wave decoration top & bottom -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      class="absolute h-40 w-full top-0 inset-x-0 rotate-180"
+      preserveAspectRatio="none"
+    >
+      <path
+        fill="#ffffff"
+        fill-opacity="1"
+        d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      class="absolute h-40 w-full bottom-0 inset-x-0"
+      preserveAspectRatio="none"
+    >
+      <path
+        fill="#ffffff"
+        fill-opacity="1"
+        d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
+  </Section>
+</div>
+
+  <!-- Expansions / Future Plans -->
+  <Section class:list={"bg-white"}>
+    <Hero>
+      <div slot="hero-content-left" class="prose max-w-none order-2">
+        <Badge title="roadmap" />
+        <h2 slot="heading-title" class="font-black text-brand-green h2 my-4">Future Expansions</h2>
+        <div slot="heading-content">
+          <p>
+            We’re rolling out support for more data sources—like Cesium’s Moon or Mars tiles—and
+            plan to add community-driven voxel builds. Our ultimate goal? A living, breathing,
+            ever-updating representation of Earth (and beyond) in Minecraft!
+          </p>
+
+          <p>
+            Join the conversation on our Discord (coming soon) or follow project updates
+            on <a href="https://paper.voxelearth.org" class="link">paper.voxelearth.org</a>. 
+            Let's shape the future of Minecraft cartography together.
+          </p>
+
+          <div class="mt-8">
+            <Button url="/menu">See Pipeline</Button>
+          </div>
+        </div>
+      </div>
+
+      <div slot="hero-content-right">
+        <Picture
+          class:list={"mx-auto"}
+          src={Dessert}
+          height={600}
+          formats={["avif", "webp"]}
+          alt="Placeholder for expansions"
+        />
+      </div>
+    </Hero>
+  </Section>
+
+  <!-- Contact / “Drop By” -->
+  <Section class:list={"bg-white"}>
+    <Hero>
+      <div slot="hero-content-left" class="prose max-w-none">
+        <Badge color="red" title="come on over" />
+        <h2 slot="heading-title" class="font-black text-brand-red h2 my-4">Connect & Explore</h2>
+        <div slot="heading-content">
+          <p>
+            You can jump in-game right now at <code>play.voxelearth.org</code>. Explore any 
+            voxelized location, from famous landmarks to hidden gems. 
+          </p>
+
+          <span class="text-brand-red font-medium">
+            ✔ Want a new location voxelized? Let us know!
+          </span>
+
+          <div class="mt-8">
+            <Button color="red" url="/contact">Get in Touch</Button>
+          </div>
+        </div>
+      </div>
+
+      <div slot="hero-content-right">
+        <Picture
+          class:list={"mx-auto"}
+          src={Dessert}
+          height={600}
+          formats={["avif", "webp"]}
+          alt="Voxel Earth contact"
+        />
+      </div>
+    </Hero>
+  </Section>
 </Layout>

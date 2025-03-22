@@ -9,80 +9,85 @@ import ButtonCallUs from "~/components/ButtonCallUs.astro";
 import Article from "~/components/Article.astro";
 
 // Images
-import PizzaHero from "~/assets/images/pizza-hero.png";
+import PizzaHero from "~/assets/images/pizza-hero.png"; // Keep or replace with a Voxel Earth screenshot
 ---
 
 <Layout>
-	<Section class:list={"bg-white"}>
-		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<Badge title="il ristorante italiana" />
-				<h1 class="font-black">Real Italian food in a real Italian restaurant...</h1>
+  <Section class:list={"bg-white"}>
+    <Hero>
+      <div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
+        <Badge title="Play the Official Server" />
+        <h1 class="font-black">Explore the Real World in Minecraft</h1>
 
-				<p>
-					Experience the taste of Italy with our authentic dishes made from the finest ingredients. Indulge in
-					our wide variety of pizzas, pastas, and desserts, all crafted with love and tradition. Whether
-					you're dining in or taking out, we promise a memorable culinary experience.
-				</p>
+        <p>
+          Welcome to <strong>Voxel Earth</strong>, a cutting-edge 3D Tiles pipeline that brings real-world
+          photogrammetry data—like Google’s 3D Tiles—directly into Minecraft. Our goal is to let anyone
+          explore famous landmarks, entire cityscapes, and even planetary bodies, all converted on the
+          fly into voxelized blocks. 
+        </p>
 
-				<span class="text-brand-green font-medium">✔ We also deliver</span>
+        <span class="text-brand-green font-medium">✔ Now featuring real-time chunk loading in Minecraft</span>
 
-				<div class="mt-8 flex items-center gap-x-8">
-					<Button url="/book">Book now</Button>
-					<ButtonCallUs />
-				</div>
-			</div>
-			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={PizzaHero}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-					loading={"eager"}
-					fetchpriority={"high"}
-				/>
-			</div>
-		</Hero>
-	</Section>
+        <div class="mt-8 flex items-center gap-x-8">
+          <Button url="/book">Play Now</Button>
+          <ButtonCallUs label="Read Paper" linkTo="https://paper.voxelearth.org" />
+        </div>
+      </div>
+      <div slot="hero-content-right">
+        <Picture
+          class:list={"mx-auto"}
+          src={PizzaHero}
+          height={600}
+          formats={["avif", "webp"]}
+          alt="Voxel Earth screenshot or placeholder"
+          loading={"eager"}
+          fetchpriority={"high"}
+        />
+      </div>
+    </Hero>
+  </Section>
 
-	<Section class:list={'bg-white'}>
-		<Article>
-			<h2>Welcome to AstroPie</h2>
-			<p>
-				Nestled in the heart of the city, <strong>AstroPie</strong> offers an authentic Italian dining experience
-				like no other. From the moment you step through our doors, you'll be transported to the vibrant streets of
-				Italy, where good food and great company are at the center of life.
-			</p>
+  <Section class:list={'bg-white'}>
+    <Article>
+      <h2>Welcome to Voxel Earth</h2>
+      <p>
+        <strong>Voxel Earth</strong> automates the process of converting 3D Tiles (like those from
+        Google Earth or Cesium) into fully explorable Minecraft worlds. By joining
+        our server at <code>play.voxelearth.org</code>, you can see iconic places worldwide
+        re-created with voxel blocks in real time.
+      </p>
 
-			<h3>Our Story</h3>
-			<p>
-				Founded in <em>1998</em>, our family-owned restaurant has always been a labor of love. Inspired by the
-				recipes passed down through generations, we bring the <u>rich culinary heritage</u> of Italy to your plate.
-				Every dish tells a story, and every meal is a celebration of flavor.
-			</p>
+      <h3>Our Origins</h3>
+      <p>
+        Since the early days of Minecraft modding, people have dreamed of a "real Earth"
+        you can explore block by block. Initially, many players tried building iconic
+        landmarks by hand—an immense task. With <strong>Voxel Earth</strong>, we fully automate
+        that process using advanced voxelization algorithms and a GPU pipeline that
+        handles even the largest photogrammetry data sets.
+      </p>
 
-			<h3>Our Philosophy</h3>
-			<blockquote>"The secret ingredient is always love."</blockquote>
-			<p>
-				At AstroPie, we believe in the simple joy of fresh ingredients, time-honored techniques, and a
-				passion for creating memorable meals. From our hand-rolled pasta to our wood-fired pizzas, every bite is
-				crafted with care.
-			</p>
+      <h3>Why “Voxel Earth”?</h3>
+      <blockquote>"Putting the planet in your (Minecraft) hands."</blockquote>
+      <p>
+        We focus on the simple joy of exploring your favorite real-world locations in a
+        beloved game. From traversing city streets to climbing famous structures, you
+        get the experience of a lifetime. Voxel Earth brings the entire globe to you—
+        right inside Minecraft.
+      </p>
 
-			<h4>What Makes Us Special?</h4>
-			<ul>
-				<li><strong>Authenticity:</strong> Traditional recipes, just like Nonna used to make.</li>
-				<li><strong>Fresh Ingredients:</strong> Locally sourced produce and imported Italian staples.</li>
-				<li><strong>Warm Atmosphere:</strong> A place where everyone feels like family.</li>
-			</ul>
+      <h4>Key Highlights</h4>
+      <ul>
+        <li><strong>Global Coverage:</strong> We aim to integrate 3D Tiles from multiple providers, not just Google.</li>
+        <li><strong>Rich Detail:</strong> High-resolution photogrammetry for breathtaking realism.</li>
+        <li><strong>Dynamic Loading:</strong> Load chunks on demand as you walk, just like standard Minecraft.</li>
+      </ul>
 
-			<h3>Join Us</h3>
-			<p>
-				Whether you're celebrating a special occasion or simply indulging in the pleasures of Italian cuisine, <strong
-					>AstroPie</strong
-				> is the perfect destination. <em>Come for the food, stay for the memories.</em>
-			</p>
-		</Article>
-	</Section>
+      <h3>Join Us</h3>
+      <p>
+        Whether you’re an explorer, a builder, or a researcher, <strong>Voxel Earth</strong> opens new
+        frontiers. Jump in at <code>play.voxelearth.org</code>, or explore the 
+        <a href="https://paper.voxelearth.org" class="link">official paper</a> for deeper technical details.
+      </p>
+    </Article>
+  </Section>
 </Layout>

@@ -1,8 +1,8 @@
 // Global variables
 export const siteLang = "en-US";
 export const siteCurrency = "USD";
-export const siteDomain = "astropie.com";
-export const siteName = "AstroPie";
+export const siteDomain = "voxelearth.org";
+export const siteName = "Voxel Earth";
 export const siteSlogan = "The best pies in the galaxy!";
 export const themeColor = "#FF0000";
 
@@ -11,9 +11,14 @@ export const phone = {
 	label: "(123) 456-789",
 };
 
+export const discord = {
+	href: "https://discord.gg/voxelearth",
+	label: "Voxel Earth Discord",
+};
+
 export const email = {
-	href: "mailto:info@astropie.com",
-	label: "info@astropie.com",
+	href: "mailto:info@voxelearth.org",
+	label: "info@voxelearth.org",
 };
 
 export const address = {

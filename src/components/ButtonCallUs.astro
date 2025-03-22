@@ -1,15 +1,15 @@
 ---
-import IconPhone from "~/assets/icons/phone.svg";
-import { phone } from "~/data/config";
+import IconDiscord from "~/assets/icons/discord.svg";
+import { discord } from "~/data/config";
 ---
 
 <a
-	href={phone.href}
-	class="not-prose flex items-center gap-x-3 hover:-translate-y-1 hover:-rotate-1 transition duration-300"
+  href={discord.href}
+  class="not-prose flex items-center gap-x-3 hover:-translate-y-1 hover:-rotate-1 transition duration-300"
 >
-	<IconPhone class="bg-brand-red rounded-full p-2.5 size-12 text-white" />
-	<div>
-		<p class="text-base/4">Call us</p>
-		<span class="text-brand-green font-bold text-base/6">{phone.label}</span>
-	</div>
+  <IconDiscord fill="white" class="bg-[#5865F2] rounded-full p-2.5 size-12 text-white" />
+  <div>
+    <p class="text-base/4">Join our Discord</p>
+    <span class="text-brand-green font-bold text-base/6">{discord.label}</span>
+  </div>
 </a>

@@ -2,11 +2,16 @@
 import { menuMain } from "~/data/menus";
 const currentYear = new Date().getFullYear();
 import { siteName } from "~/data/config";
+import '~/css/base.css'
+
 ---
 
-<footer class="bg-brand-green text-white">
+<footer class="bg-block-bedrock text-white">
+	<div class="bg-dark-75">
 	<div class="container pt-16 pb-8">
-		<p class="text-center font-bold text-4xl text-white">Astro<span class="text-brand-red bg-white px-3 ml-1 rounded-lg">Pie</span></p>
+		<p class="text-center font-bold text-4xl text-white">
+      Voxel<span class="text-brand-red bg-white pl-3 pr-2 ml-3">Earth</span>
+    </p>
 		<nav class="flex flex-col sm:flex-row items-center justify-center gap-x-12 gap-y-3 font-medium mt-6" aria-label="Footer">
 			{
 				menuMain.map((item) => (
@@ -16,6 +21,12 @@ import { siteName } from "~/data/config";
 				))
 			}
 		</nav>
-		<p class="mt-10 text-center text-sm">&copy; {currentYear} {siteName}. All rights reserved. <a class="underline" href="/privacy-policy">Privacy policy</a></p>
+		<p class="mt-10 text-center text-sm">
+      &copy; {currentYear} {siteName}. All rights reserved. <a class="underline" href="/privacy-policy">Privacy policy</a>
+    </p>
+	<p class="text-center text-sm">
+		"Minecraft" is a trademark of Mojang AB. Voxel Earth is not affiliated with Mojang AB.
+	  </p>
 	</div>
+</div>
 </footer>
