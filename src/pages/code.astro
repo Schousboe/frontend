@@ -1,0 +1,60 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import Section from "~/components/Section.astro";
+import Heading from "~/components/Heading.astro";
+import MenuList from "~/components/Menu.astro";
+---
+
+<Layout>
+	<Section>
+		<Heading>
+			<h1 slot="heading-title" class="font-black text-brand-green h2">Our Code</h1>
+			<p slot="heading-content">
+				Explore our primary repositories, submodules, and supporting libraries. See how 
+				we transform real-world 3D Tiles into Minecraft voxels!
+			</p>
+		</Heading>
+
+		<!-- The component that displays all repos -->
+		<MenuList />
+	</Section>
+
+	<!-- Extra: Original Forked Repos & Data Sources -->
+	<Section>
+		<Heading>
+			<h2 slot="heading-title" class="font-black text-brand-green h3">External Sources</h2>
+			<p slot="heading-content">
+				Below are some of the core open-source projects we’ve forked or integrated, plus 
+				the real-world data sources that power our pipeline.
+			</p>
+		</Heading>
+
+		<div class="max-w-3xl mx-auto mt-8 space-y-8">
+			<!-- Forked Repos -->
+			<div>
+				<h3 class="font-bold text-xl text-brand-green mb-2">Forked Repositories</h3>
+				<ul class="list-disc list-inside text-gray-700 space-y-2">
+					<li>
+						<strong>ObjToSchematic by Lucas Dower:</strong> CPU voxelization logic used for fallback.
+					</li>
+					<li>
+						<strong>cuda_voxelizer by ForceFlow:</strong> Core GPU voxel engine, adapted for real-time textures.
+					</li>
+					<li>
+						<strong>3dtiles-dl by Lukas Lao Beyer:</strong> 3D Tiles downloader, integrated for tile merges.
+					</li>
+				</ul>
+			</div>
+
+			<!-- Data Sources -->
+			<div>
+				<h3 class="font-bold text-xl text-brand-green mb-2">Data Sources</h3>
+				<ul class="list-disc list-inside text-gray-700 space-y-2">
+					<li><strong>Google Photorealistic 3D Tiles:</strong> High-resolution Earth imagery &amp; geometry.</li>
+					<li><strong>Cesium Moon &amp; Mars:</strong> Planetary data sets for creating off-world voxel experiences.</li>
+					<li><strong>Public LIDAR &amp; GIS Repos:</strong> Additional open geospatial data from various agencies.</li>
+				</ul>
+			</div>
+		</div>
+	</Section>
+</Layout>

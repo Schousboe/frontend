@@ -1,0 +1,103 @@
+[
+	{
+	  "id": 1,
+	  "slug": "voxel-earth-core",
+	  "prettyName": "Voxel Earth Core",
+	  "description": "Main pipeline for converting 3D Tiles into voxel data.",
+	  "repos": [
+		{
+		  "name": "voxel-earth",
+		  "description": "Primary GPU-based voxelization pipeline.",
+		  "starCount": 143
+		},
+		{
+		  "name": "voxel-earth-cli",
+		  "description": "CLI tools for chunk processing and debugging.",
+		  "starCount": 58
+		},
+		{
+		  "name": "voxel-earth-service",
+		  "description": "Backend service for tile streaming.",
+		  "starCount": 112
+		}
+	  ]
+	},
+	{
+	  "id": 2,
+	  "slug": "minecraft-plugins",
+	  "prettyName": "Minecraft Plugins",
+	  "description": "Plugins that integrate voxelized tilesets within Minecraft servers.",
+	  "repos": [
+		{
+		  "name": "voxel-earth-mc",
+		  "description": "Server-side plugin for dynamic chunk loading.",
+		  "starCount": 90
+		},
+		{
+		  "name": "voxel-earth-fabric",
+		  "description": "Fabric mod for client-based rendering improvements.",
+		  "starCount": 42
+		}
+	  ]
+	},
+	{
+	  "id": 3,
+	  "slug": "web-viewers",
+	  "prettyName": "Web Viewers",
+	  "description": "Front-end code for 3D Tiles previewing in browsers.",
+	  "repos": [
+		{
+		  "name": "3dtiles-demo",
+		  "description": "Interactive map that shows voxelized GLB models in real time.",
+		  "starCount": 77
+		},
+		{
+		  "name": "tiles3d-proxy",
+		  "description": "Proxy server for on-demand tile retrieval and voxelization.",
+		  "starCount": 35
+		}
+	  ]
+	},
+	{
+	  "id": 4,
+	  "slug": "gpu-voxelizer",
+	  "prettyName": "GPU Voxelizer",
+	  "description": "Modules specifically handling GPU acceleration and texture mapping.",
+	  "repos": [
+		{
+		  "name": "cuda-voxelizer",
+		  "description": "CUDA-based pipeline for high-speed voxel creation.",
+		  "starCount": 96
+		},
+		{
+		  "name": "trimesh2-fork",
+		  "description": "Fork of Trimesh2 with custom voxel texture mapping.",
+		  "starCount": 18
+		}
+	  ]
+	},
+	{
+	  "id": 5,
+	  "slug": "utilities",
+	  "prettyName": "Utilities",
+	  "description": "Various helper scripts and libraries that keep the pipeline running smoothly.",
+	  "repos": [
+		{
+		  "name": "3dtiles-downloader",
+		  "description": "Multithreaded script to pull highest resolution tiles for voxelization.",
+		  "starCount": 55
+		},
+		{
+		  "name": "blendertools",
+		  "description": "Assorted scripts using Blender for mesh fixes and conversions.",
+		  "starCount": 24
+		},
+		{
+		  "name": "geoconvert",
+		  "description": "Coordinate transformation library (ECEF↔ENU).",
+		  "starCount": 31
+		}
+	  ]
+	}
+  ]
+  

@@ -5,8 +5,8 @@ export const menuMain = [
         highlighted: false,
     },
     {
-        name: "Menu",
-        url: "/menu",
+        name: "Code",
+        url: "/code",
         highlighted: false,
     },
     {

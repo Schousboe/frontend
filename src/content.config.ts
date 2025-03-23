@@ -17,6 +17,22 @@ const plates = defineCollection({
 	}),
 });
 
+const repos = defineCollection({
+	loader: file("src/data/repos.json"),
+	schema: z.object({
+		slug: z.string(),
+		prettyName: z.string(),
+		description: z.string(),
+		repos: z.array(
+			z.object({
+				name: z.string(),
+				description: z.string(),
+				starCount: z.number(),
+			})
+		),
+	}),
+});
+
 const reviews = defineCollection({
 	loader: file("src/data/reviews.json"),
 	schema: z.object({
@@ -35,4 +51,4 @@ const gallery = defineCollection({
 		}),
 });
 
-export const collections = { plates, reviews, gallery };
+export const collections = { plates, reviews, gallery, repos };
