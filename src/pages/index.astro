@@ -8,7 +8,6 @@ import Button from "~/components/Button.astro";
 import ButtonCallUs from "~/components/ButtonCallUs.astro";
 import Grid from "~/components/Grid.astro";
 import Heading from "~/components/Heading.astro";
-import WideImage from "~/components/WideImage.astro";
 import ReviewSlider from "~/components/ReviewSlider.astro";
 
 // Images (you can replace these with real Voxel Earth images if desired)
@@ -17,7 +16,6 @@ import PizzaHero from "~/assets/images/screen/download (8).jpg";
 import Pizza from "~/assets/images/screen/download (5).jpg";
 import Spaghetti from "~/assets/images/screen/download (6).jpg";
 import Fish from "~/assets/images/screen/download (3).jpg";
-import DecorativeImage from "~/assets/images/screen/download (1).jpg";
 import Pizza2 from "~/assets/images/screen/download (10).jpg";
 import reviewAuthors from "~/assets/images/review-authors.png";
 import Dessert from "~/assets/images/screen/download (7).jpg";
@@ -104,7 +102,35 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
   </Section>
 
   <!-- Wide Decorative Image -->
-  <WideImage image={DecorativeImage} alt="Voxel Earth wide image" class:list={"aspect-video lg:aspect-[16/6]"} />
+  <Section contain={false} class:list={"bg-white py-0"}>
+    <div class="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 py-10">
+      <div class="relative overflow-hidden rounded-[36px] border border-brand-green/20 shadow-2xl bg-white">
+        <iframe
+          src="https://beta.voxelearth.org"
+          title="Voxel Earth beta preview"
+          loading="lazy"
+          class="h-[420px] w-full bg-black md:h-[640px]"
+        ></iframe>
+
+        <div class="absolute right-8 top-8 flex flex-col items-end gap-3 text-right">
+          <span class="rounded-full bg-black/60 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-white/90">
+            beta.voxelearth.org
+          </span>
+          <a
+            href="https://beta.voxelearth.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-xl transition hover:bg-brand-green/90"
+          >
+            Open in new tab
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17 17 7M9 7h8v8" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </Section>
 
   <!-- Section: Key Features -->
   <Section class:list={"bg-white"}>

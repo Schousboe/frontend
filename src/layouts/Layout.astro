@@ -6,7 +6,12 @@ import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 const { pageTitle, title, description } = Astro.props;
 const baseUrl = `${Astro.url.protocol}//${Astro.url.host}`;
+const canonicalUrl = Astro.url.toString();
 import { siteLang, themeColor } from "~/data/config";
+const metaKeywords = "Voxel Earth, Google Earth voxels, Photorealistic 3D Tiles, Minecraft Earth, voxel pipeline, virtual worlds, geospatial";
+const metaAuthor = "Voxel Earth Team";
+const ogImage = `${baseUrl}/icons/coverwithattribution.jpg`;
+const siteName = "Voxel Earth";
 ---
 
 <!doctype html>
@@ -16,49 +21,37 @@ import { siteLang, themeColor } from "~/data/config";
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content={themeColor} />
 		<meta name="description" content={description} />
+		<meta name="keywords" content={metaKeywords} />
+		<meta name="author" content={metaAuthor} />
 		<meta name="robots" content="index,follow" />
 		<meta name="googlebot" content="index,follow" />
 		<link rel="author" href="humans.txt" />
 		<link rel="stylesheet" href="/css/minecraft.css">
+		<link rel="canonical" href={canonicalUrl} />
 
-		<!-- <link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="/images/favicon/apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/images/favicon/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="/images/favicon/favicon-16x16.png"
-		/>
-		<link rel="manifest" href="/site.webmanifest" />
-		<link
-			rel="mask-icon"
-			href="/images/favicon/safari-pinned-tab.svg"
-			color="#E6F4FF"
-		/> -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+		<link rel="shortcut icon" href="/icons/favicon.ico" />
+		<link rel="manifest" href="/icons/site.webmanifest" />
+
 		<meta name="msapplication-TileColor" content="#ffffff" />
 
-		<meta property="og:url" content={Astro.url} />
+		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
-		<meta property="og:image" content={`${baseUrl}/images/og-image.jpg`} />
 		<meta property="og:description" content={description} />
-		<meta property="og:site_name" content="WP Infusion" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:alt" content="Voxel Earth cover art" />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:description" content={description} />
 		<meta property="og:locale" content={siteLang} />
 
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:url" content={Astro.url} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalUrl} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<!-- <meta name="twitter:image" content={`${baseUrl}/images/og-image.jpg`} /> -->
+		<meta name="twitter:image" content={ogImage} />
 		<title>{pageTitle}</title>
 		<ClientRouter />
 	</head>

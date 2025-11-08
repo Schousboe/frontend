@@ -1,9 +1,15 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
+
+const pageMeta = {
+	title: "404",
+	pageTitle: "Page Not Found | Voxel Earth",
+	description: "The page you were looking for doesn't exist on Voxel Earth.",
+};
 ---
 
-<Layout>
+<Layout title={pageMeta.title} pageTitle={pageMeta.pageTitle} description={pageMeta.description}>
 	<Section>
 		<div class="min-h-full mx-auto w-full max-w-6xl">
 			<div class="text-center">

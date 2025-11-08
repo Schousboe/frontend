@@ -28,6 +28,7 @@ const repos = defineCollection({
 				name: z.string(),
 				description: z.string(),
 				starCount: z.number(),
+				url: z.string().url(),
 			})
 		),
 	}),

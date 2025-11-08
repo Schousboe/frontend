@@ -3,12 +3,19 @@ import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
 import Heading from "~/components/Heading.astro";
 import FormContact from "~/components/forms/FormContact.astro";
+import { discord } from "~/data/config";
+
+const pageMeta = {
+	title: "Contact",
+	pageTitle: "Contact | Voxel Earth",
+	description: "Get in touch with the Voxel Earth team for partnerships, tech questions, or support.",
+};
 ---
 
-<Layout>
+<Layout title={pageMeta.title} pageTitle={pageMeta.pageTitle} description={pageMeta.description}>
   <Section>
     <Heading>
-      <h2 slot="heading-title" class="font-black text-brand-green h2">Contact Voxel Earth Team</h2>
+      <h2 slot="heading-title" class="font-black text-brand-green h2">Contact Us</h2>
       <p slot="heading-content">
         Get in touch with us for inquiries about the pipeline, collaboration, or
         server improvements. We’d love to hear your suggestions or feedback.
@@ -16,5 +23,26 @@ import FormContact from "~/components/forms/FormContact.astro";
     </Heading>
 
     <FormContact />
+
+    <div class="mt-24 rounded-3xl border border-brand-green/20 bg-brand-green/5 p-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="text-sm uppercase tracking-[0.35em] text-brand-green/70">Need a faster response?</p>
+        <h3 class="mt-2 text-2xl font-black text-brand-green">Ping us on Discord</h3>
+        <p class="mt-2 text-slate-700">
+          Most of the team hangs out in our community server. Drop a message in <code>#support</code> for real-time help.
+        </p>
+      </div>
+      <a
+        href={discord.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-white shadow-lg transition hover:bg-brand-green/90"
+      >
+        Join Discord
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17 17 7M9 7h8v8" />
+        </svg>
+      </a>
+    </div>
   </Section>
 </Layout>

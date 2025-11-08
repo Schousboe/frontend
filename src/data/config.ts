@@ -12,7 +12,7 @@ export const phone = {
 };
 
 export const discord = {
-	href: "https://discord.gg/voxelearth",
+	href: "https://discord.gg/8MK8J9EQGe",
 	label: "Voxel Earth Discord",
 };
 
