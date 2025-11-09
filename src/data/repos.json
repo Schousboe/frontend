@@ -1,115 +1,90 @@
 [
-	{
-		"id": 1,
-		"slug": "voxel-earth-core",
-		"prettyName": "Voxel Earth Core",
-		"description": "Main pipeline for converting 3D Tiles into voxel data.",
-		"repos": [
-			{
-				"name": "voxel-earth",
-				"description": "Primary GPU-based voxelization pipeline.",
-				"starCount": 143,
-				"url": "https://github.com/VoxelEarth/voxel-earth"
-			},
-			{
-				"name": "voxel-earth-cli",
-				"description": "CLI tools for chunk processing and debugging.",
-				"starCount": 58,
-				"url": "https://github.com/VoxelEarth/voxel-earth-cli"
-			},
-			{
-				"name": "voxel-earth-service",
-				"description": "Backend service for tile streaming.",
-				"starCount": 112,
-				"url": "https://github.com/VoxelEarth/voxel-earth-service"
-			}
-		]
-	},
-	{
-		"id": 2,
-		"slug": "minecraft-plugins",
-		"prettyName": "Minecraft Plugins",
-		"description": "Plugins that integrate voxelized tilesets within Minecraft servers.",
-		"repos": [
-			{
-				"name": "voxel-earth-mc",
-				"description": "Server-side plugin for dynamic chunk loading.",
-				"starCount": 90,
-				"url": "https://github.com/VoxelEarth/voxel-earth-mc"
-			},
-			{
-				"name": "voxel-earth-fabric",
-				"description": "Fabric mod for client-based rendering improvements.",
-				"starCount": 42,
-				"url": "https://github.com/VoxelEarth/voxel-earth-fabric"
-			}
-		]
-	},
-	{
-		"id": 3,
-		"slug": "web-viewers",
-		"prettyName": "Web Viewers",
-		"description": "Front-end code for 3D Tiles previewing in browsers.",
-		"repos": [
-			{
-				"name": "3dtiles-demo",
-				"description": "Interactive map that shows voxelized GLB models in real time.",
-				"starCount": 77,
-				"url": "https://github.com/VoxelEarth/3dtiles-demo"
-			},
-			{
-				"name": "tiles3d-proxy",
-				"description": "Proxy server for on-demand tile retrieval and voxelization.",
-				"starCount": 35,
-				"url": "https://github.com/VoxelEarth/tiles3d-proxy"
-			}
-		]
-	},
-
-	{
-		"id": 4,
-		"slug": "gpu-voxelizer",
-		"prettyName": "GPU Voxelizer",
-		"description": "Modules specifically handling GPU acceleration and texture mapping.",
-		"repos": [
-			{
-				"name": "cuda-voxelizer",
-				"description": "CUDA-based pipeline for high-speed voxel creation.",
-				"starCount": 96,
-				"url": "https://github.com/VoxelEarth/cuda-voxelizer"
-			},
-			{
-				"name": "trimesh2-fork",
-				"description": "Fork of Trimesh2 with custom voxel texture mapping.",
-				"starCount": 18,
-				"url": "https://github.com/VoxelEarth/trimesh2-fork"
-			}
-		]
-	},
-	{
-		"id": 5,
-		"slug": "utilities",
-		"prettyName": "Utilities",
-		"description": "Various helper scripts and libraries that keep the pipeline running smoothly.",
-		"repos": [
-			{
-				"name": "3dtiles-downloader",
-				"description": "Multithreaded script to pull highest resolution tiles for voxelization.",
-				"starCount": 55,
-				"url": "https://github.com/VoxelEarth/3dtiles-downloader"
-			},
-			{
-				"name": "blendertools",
-				"description": "Assorted scripts using Blender for mesh fixes and conversions.",
-				"starCount": 24,
-				"url": "https://github.com/VoxelEarth/blendertools"
-			},
-			{
-				"name": "geoconvert",
-				"description": "Coordinate transformation library (ECEF to ENU).",
-				"starCount": 31,
-				"url": "https://github.com/VoxelEarth/geoconvert"
-			}
-		]
-	}
+  {
+    "id": 1,
+    "slug": "voxel-earth-core",
+    "prettyName": "Voxel Earth Core",
+    "description": "Main pipeline for converting 3D Tiles into voxel data.",
+    "repos": [
+      {
+        "name": "VoxelEarth (monorepo)",
+        "description": "Primary pipeline, docs, and end-to-end examples.",
+        "starCount": 137,
+        "url": "https://github.com/ryanhlewis/VoxelEarth"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "minecraft-plugins",
+    "prettyName": "Minecraft Plugins",
+    "description": "Plugins that integrate voxelized tilesets within Minecraft servers.",
+    "repos": [
+      {
+        "name": "minecraft-plugin",
+        "description": "Paper plugin that streams voxelized Google 3D Tiles.",
+        "starCount": 64,
+        "url": "https://github.com/voxelearth/minecraft-plugin"
+      },
+      {
+        "name": "DynamicLoader",
+        "description": "Velocity proxy plugin that spins up/down servers on demand.",
+        "starCount": 28,
+        "url": "https://github.com/voxelearth/DynamicLoader"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "web-viewers",
+    "prettyName": "Web Viewers",
+    "description": "Front-end code for 3D Tiles previewing in browsers.",
+    "repos": [
+      {
+        "name": "web-client",
+        "description": "Web client that fetches Photorealistic 3D Tiles and normalizes/rotates them.",
+        "starCount": 12,
+        "url": "https://github.com/voxelearth/web-client"
+      },
+      {
+        "name": "frontend",
+        "description": "The voxelearth.org website built with Astro (docs, links, and demos).",
+        "starCount": 8,
+        "url": "https://github.com/voxelearth/frontend"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "gpu-voxelizer",
+    "prettyName": "GPU Voxelizer",
+    "description": "Modules specifically handling GPU acceleration and texture mapping.",
+    "repos": [
+      {
+        "name": "minecraft-cuda-voxelizer",
+        "description": "CUDA-based pipeline for high-speed voxel creation.",
+        "starCount": 103,
+        "url": "https://github.com/voxelearth/minecraft-cuda-voxelizer"
+      },
+      {
+        "name": "glb-trimesh2",
+        "description": "TriMesh2 utilities and GLB/GLTF IO used by the voxelizer.",
+        "starCount": 83,
+        "url": "https://github.com/voxelearth/glb-trimesh2"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "utilities",
+    "prettyName": "Utilities",
+    "description": "Various helper scripts and libraries that keep the pipeline running smoothly.",
+    "repos": [
+      {
+        "name": "3dtiles-dl",
+        "description": "Multithreaded downloader for highest-resolution tiles.",
+        "starCount": 10,
+        "url": "https://github.com/voxelearth/3dtiles-dl"
+      }
+    ]
+  }
 ]
