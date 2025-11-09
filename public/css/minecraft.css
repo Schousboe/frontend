@@ -189,6 +189,10 @@ Classes:
     --zoom: 10;
     user-select: none;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
     image-rendering: pixelated;
     background-size: cover;
     background-image: url('../imgs/ui/button-inside.png');
@@ -198,7 +202,11 @@ Classes:
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
     color: #d1d5db;
-} .button:hover {
+    padding: calc(var(--block-size) / 6) calc(var(--block-size) / 2.5);
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.2rem);
+    min-height: calc(var(--block-size) / 1.8);
+} 
+.button:hover {
     background-size: cover;
     background-image: url('../imgs/ui/button-inside-hover.png');
     border-width: calc(var(--block-size) / var(--zoom));

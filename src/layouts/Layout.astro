@@ -46,14 +46,53 @@ const siteName = "Voxel Earth";
 		<meta property="og:site_name" content={siteName} />
 		<meta property="og:description" content={description} />
 		<meta property="og:locale" content={siteLang} />
+		<meta name="astro-view-transitions-enabled" content="false" />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content={canonicalUrl} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImage} />
+		<script is:inline>
+			{`
+        (function() {
+          var originalMatchMedia = window.matchMedia;
+          window.matchMedia = function(query) {
+            if (typeof query === 'string' && query.includes('prefers-reduced-motion')) {
+              return { matches: false, media: query, addListener: function(){}, removeListener: function(){} };
+            }
+            return originalMatchMedia.call(window, query);
+          };
+        })();
+      `}
+		</script>
 		<title>{pageTitle}</title>
 		<ClientRouter />
+		<script type="module">
+			{`
+        import { navigate } from 'astro:transitions/client';
+
+        const canHandle = (event) => {
+          if (event.defaultPrevented) return false;
+          if (event.button !== 0) return false;
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return false;
+          const anchor = event.target.closest('a[data-view-transition]');
+          if (!anchor) return false;
+          if (anchor.target && anchor.target !== '_self') return false;
+          if (anchor.hasAttribute('download')) return false;
+          const url = new URL(anchor.href, window.location.origin);
+          if (url.origin !== window.location.origin) return false;
+          return anchor;
+        };
+
+        document.addEventListener('click', async (event) => {
+          const anchor = canHandle(event);
+          if (!anchor) return;
+          event.preventDefault();
+          await navigate(anchor.href, { history: 'push' });
+        });
+      `}
+		</script>
 	</head>
 	<body>
 		<Header />
@@ -61,5 +100,6 @@ const siteName = "Voxel Earth";
 			<slot />
 		</main>
 		<Footer />
+		<slot name="scripts" />
 	</body>
 </html>

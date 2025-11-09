@@ -2,18 +2,58 @@
 const { color = "green", title = "" }: BadgeProps = Astro.props;
 
 interface BadgeProps {
-	color?: "red" | "green";
+	color?: "red" | "green" | "white" | "location";
 	title?: string;
 }
+
+const themeStyles: Record<string, Record<string, string>> = {
+	red: {
+		"--pill-base-bg": "rgba(76,50,35,0.12)",
+		"--pill-base-text": "#4C3223",
+		"--pill-ring": "rgba(76,50,35,0.4)",
+		"--pill-fill-bg": "#4C3223",
+		"--pill-fill-text": "#ffffff",
+	},
+	green: {
+		"--pill-base-bg": "rgba(76,118,60,0.12)",
+		"--pill-base-text": "#4C763C",
+		"--pill-ring": "rgba(76,118,60,0.45)",
+		"--pill-fill-bg": "#4C763C",
+		"--pill-fill-text": "#ffffff",
+	},
+	location: {
+		"--pill-base-bg": "rgba(219,29,0,0.1)",
+		"--pill-base-text": "#DB1D00",
+		"--pill-ring": "rgba(219,29,0,0.45)",
+		"--pill-fill-bg": "#DB1D00",
+		"--pill-fill-text": "#ffffff",
+	},
+	white: {
+		"--pill-base-bg": "rgba(255,255,255,0.85)",
+		"--pill-base-text": "#111827",
+		"--pill-ring": "rgba(17,24,39,0.12)",
+		"--pill-fill-bg": "#111827",
+		"--pill-fill-text": "#ffffff",
+	},
+};
 
 const colors = {
 	red: "bg-brand-red/5 text-brand-red ring-1 ring-brand-red",
 	green: "bg-brand-green/5 text-brand-green ring-1 ring-brand-green",
-	white: "bg-white",
 	location: "bg-brand-location/5 text-brand-location ring-1 ring-brand-location",
+	white: "bg-white text-slate-900 ring-1 ring-slate-200",
 };
+
+const selectedTheme = themeStyles[color] ?? themeStyles.green;
+const styleString = Object.entries(selectedTheme)
+	.map(([key, value]) => `${key}: ${value}`)
+	.join("; ");
 ---
 
-<span class={`inline-flex not-prose items-center mb-4 rounded-full px-3 py-1 text-base font-semibold ${colors[color]}`}
-	>{title}</span
+<span
+	class={`pill-badge inline-flex not-prose items-center mb-4 rounded-full px-3 py-1 text-base font-semibold ${colors[color] ?? colors.green}`}
+	data-pill
+	style={styleString}
 >
+	{title}
+</span>

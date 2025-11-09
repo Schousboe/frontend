@@ -251,3 +251,64 @@ video {
 [hidden] {
   display: none;
 }
+
+/* Pixel-frame utility classes to keep the cropouts alive */
+.pixel-frame {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.pixel-frame picture,
+.pixel-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pixel-frame picture > img {
+  object-fit: cover;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.pixel-frame__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: transform 200ms ease-out;
+}
+
+.pixel-frame__overlay {
+  image-rendering: pixelated;
+  z-index: 10;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-frame__image {
+    transition: none;
+    transform: none !important;
+  }
+}
+
+.pill-badge {
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    box-shadow 220ms ease,
+    transform 200ms ease;
+}
+
+.pill-badge[data-pill-filled="true"] {
+  background: var(--pill-fill-bg, currentColor) !important;
+  color: var(--pill-fill-text, #ffffff) !important;
+  box-shadow:
+    0 0 0 1px var(--pill-fill-bg, currentColor),
+    0 0 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}

@@ -12,14 +12,14 @@ import ReviewSlider from "~/components/ReviewSlider.astro";
 
 // Images (you can replace these with real Voxel Earth images if desired)
 // import PizzaHero from "~/assets/images/pizza-hero.png";
-import PizzaHero from "~/assets/images/screen/download (8).jpg";
-import Pizza from "~/assets/images/screen/download (5).jpg";
-import Spaghetti from "~/assets/images/screen/download (6).jpg";
+import PizzaHero from "~/assets/images/screen/buildings.png";
+import Pizza from "~/assets/images/screen/tower.png";
+import Spaghetti from "~/assets/images/screen/paris.jpg";
 import Fish from "~/assets/images/screen/download (3).jpg";
-import Pizza2 from "~/assets/images/screen/download (10).jpg";
+import Pizza2 from "~/assets/images/screen/temple.jpg";
 import reviewAuthors from "~/assets/images/review-authors.png";
 import Dessert from "~/assets/images/screen/download (7).jpg";
-import Mussels from "~/assets/images/screen/download (11).jpg";
+import Mussels from "~/assets/images/screen/fuji.png";
 import Dessert2 from "~/assets/images/screen/download (4).jpg";
 ---
 
@@ -38,11 +38,11 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
           the deserts of Arizona, explore it all in Minecraft at <code>play.voxelearth.org</code>.
         </p>
 
-        <span class="text-brand-green font-medium">✔ Powered by GPU voxelization</span>
+        <span class="text-brand-green font-medium">&#10003; Powered by GPU voxelization</span>
 
         <div class="mt-8 flex items-center gap-x-8">
           <Button url="/play">Join Server</Button>
-          <ButtonCallUs label="Learn More" linkTo="https://paper.voxelearth.org" />
+          <ButtonCallUs label="Learn More" linkTo="https://research.voxelearth.org" />
         </div>
       </div>
       <!-- <div slot="hero-content-right">
@@ -75,7 +75,10 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
 
 		<div 
 		slot="hero-content-right" 
-		class="relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+		class="pixel-frame relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+		data-parallax-frame="true"
+		data-parallax-speed="2.0"
+		data-parallax-max="110"
 	  >
 		<!-- The image is absolutely positioned to fill the container -->
 		<Picture
@@ -85,12 +88,12 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
 		  alt="Pixel Block Demo"
 		  loading="eager"
 		  fetchpriority="high"
-		  class="absolute inset-0 w-full h-full object-cover"
+		  class="pixel-frame__image absolute inset-0 w-full h-full object-cover z-[2]"
 		/>
 	  
 		<!-- Overlay is also absolutely positioned, ensuring perfect alignment -->
 		<div
-		  class="absolute inset-0 pointer-events-none z-10"
+		  class="pixel-frame__overlay absolute inset-0 pointer-events-none"
 		 style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M40%200%20h40%20v40%20h-40%20Z%20M80%200%20h40%20v40%20h-40%20Z%20M120%200%20h40%20v40%20h-40%20Z%20M160%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M320%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M440%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M480%2040%20h40%20v40%20h-40%20Z%20M0%2080%20h40%20v40%20h-40%20Z%20M80%2080%20h40%20v40%20h-40%20Z%20M120%2080%20h40%20v40%20h-40%20Z%20M440%2080%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M40%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M320%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
 		</div>
 	  </div>
@@ -146,7 +149,12 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
       <div slot="grid-content-1">
         <div class="flex flex-col items-center prose text-center">
           <!-- Image container with fixed aspect ratio -->
-          <div class="relative max-w-[520px] aspect-[13/14] not-prose w-full mx-auto mb-10">
+          <div
+            class="pixel-frame relative max-w-[520px] aspect-[13/14] not-prose w-full mx-auto mb-10"
+            data-parallax-frame="true"
+            data-parallax-speed="1.4"
+            data-parallax-max="70"
+          >
             <Picture
               src={Pizza}
               height={560}
@@ -154,10 +162,10 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
               alt="Voxel world illustration"
               loading="eager"
               fetchpriority="high"
-              class="absolute inset-0 w-full h-full object-cover"
+              class="pixel-frame__image absolute inset-0 w-full h-full object-cover z-[2]"
             />
             <div
-              class="absolute inset-0 pointer-events-none z-10"
+              class="pixel-frame__overlay absolute inset-0 pointer-events-none"
               style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M40%200%20h40%20v40%20h-40%20Z%20M80%200%20h40%20v40%20h-40%20Z%20M120%200%20h40%20v40%20h-40%20Z%20M160%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M320%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M440%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M480%2040%20h40%20v40%20h-40%20Z%20M0%2080%20h40%20v40%20h-40%20Z%20M80%2080%20h40%20v40%20h-40%20Z%20M120%2080%20h40%20v40%20h-40%20Z%20M440%2080%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M40%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M320%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;"
             ></div>
           </div>
@@ -174,7 +182,12 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
       <div slot="grid-content-2">
         <div class="flex flex-col items-center prose text-center">
           <!-- Image container with fixed aspect ratio -->
-          <div class="relative max-w-[520px] aspect-[13/14] not-prose w-full mx-auto mb-10">
+          <div
+            class="pixel-frame relative max-w-[520px] aspect-[13/14] not-prose w-full mx-auto mb-10"
+            data-parallax-frame="true"
+            data-parallax-speed="1.6"
+            data-parallax-max="80"
+          >
             <Picture
               src={Spaghetti}
               height={560}
@@ -182,10 +195,10 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
               alt="Voxel world illustration"
               loading="eager"
               fetchpriority="high"
-              class="absolute inset-0 w-full h-full object-cover"
+              class="pixel-frame__image absolute inset-0 w-full h-full object-cover z-[2]"
             />
             <div
-              class="absolute inset-0 pointer-events-none z-10"
+              class="pixel-frame__overlay absolute inset-0 pointer-events-none"
               style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M40%2080%20h40%20v40%20h-40%20Z%20M480%2080%20h40%20v40%20h-40%20Z%20M0%20200%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20240%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20320%20h40%20v40%20h-40%20Z%20M480%20320%20h40%20v40%20h-40%20Z%20M440%20360%20h40%20v40%20h-40%20Z%20M480%20360%20h40%20v40%20h-40%20Z%20M0%20400%20h40%20v40%20h-40%20Z%20M0%20440%20h40%20v40%20h-40%20Z%20M0%20480%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M240%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M120%20520%20h40%20v40%20h-40%20Z%20M160%20520%20h40%20v40%20h-40%20Z%20M240%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%20M440%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;"
             ></div>
           </div>
@@ -201,7 +214,12 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
       <div slot="grid-content-3">
         <div class="flex flex-col items-center prose text-center">
           <!-- Image container with fixed aspect ratio -->
-          <div class="relative max-w-[520px] aspect-[13/14] not-prose w-full mx-auto mb-10">
+          <div
+            class="pixel-frame relative max-w-[520px] aspect-[13/14] not-prose w-full mx-auto mb-10"
+            data-parallax-frame="true"
+            data-parallax-speed="1.8"
+            data-parallax-max="90"
+          >
             <Picture
               src={Fish}
               height={560}
@@ -209,17 +227,17 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
               alt="3D tile pipeline demonstration"
               loading="eager"
               fetchpriority="high"
-              class="absolute inset-0 w-full h-full object-cover"
+              class="pixel-frame__image absolute inset-0 w-full h-full object-cover z-[2]"
             />
             <div
-              class="absolute inset-0 pointer-events-none z-10"
+              class="pixel-frame__overlay absolute inset-0 pointer-events-none"
               style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M40%200%20h40%20v40%20h-40%20Z%20M80%200%20h40%20v40%20h-40%20Z%20M120%200%20h40%20v40%20h-40%20Z%20M160%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M320%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M440%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M480%2040%20h40%20v40%20h-40%20Z%20M0%2080%20h40%20v40%20h-40%20Z%20M80%2080%20h40%20v40%20h-40%20Z%20M120%2080%20h40%20v40%20h-40%20Z%20M440%2080%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M40%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M320%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;"
             ></div>
           </div>
           <h3 class="h4 mt-0 font-black">Rich Textures</h3>
           <p>
             Each photogrammetry texture is transferred into Minecraft block coloration,
-            giving you an immersive experience. Buildings, water, foliage—everything is
+            giving you an immersive experience. Buildings, water, foliage&mdash;everything is
             mapped into the Minecraft palette.
           </p>
         </div>
@@ -236,7 +254,7 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
         <p>
           Wondering how your city looks when turned into voxels? We load the highest resolution
           3D Tiles available, convert them to blocks, and stream them into Minecraft
-          just like normal chunks. It’s a seamless experience—just walk around, and the
+          just like normal chunks. It's a seamless experience&mdash;just walk around, and the
           real-world data loads.
         </p>
 
@@ -308,7 +326,10 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
 
 		   <div 
 		   slot="hero-content-right" 
-		   class="relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+		   class="pixel-frame relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+		   data-parallax-frame="true"
+		   data-parallax-speed="2.2"
+		   data-parallax-max="120"
 		 >
 		   <!-- The image is absolutely positioned to fill the container -->
 		   <Picture
@@ -318,12 +339,12 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
 			 alt="Pixel Block Demo"
 			 loading="eager"
 			 fetchpriority="high"
-			 class="absolute inset-0 w-full h-full object-cover"
+			 class="pixel-frame__image absolute inset-0 w-full h-full object-cover z-[2]"
 		   />
 		 
 		   <!-- Overlay is also absolutely positioned, ensuring perfect alignment -->
 		   <div
-			 class="absolute inset-0 pointer-events-none z-10"
+			 class="pixel-frame__overlay absolute inset-0 pointer-events-none"
 			style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M40%2080%20h40%20v40%20h-40%20Z%20M480%2080%20h40%20v40%20h-40%20Z%20M0%20200%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20240%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20320%20h40%20v40%20h-40%20Z%20M480%20320%20h40%20v40%20h-40%20Z%20M440%20360%20h40%20v40%20h-40%20Z%20M480%20360%20h40%20v40%20h-40%20Z%20M0%20400%20h40%20v40%20h-40%20Z%20M0%20440%20h40%20v40%20h-40%20Z%20M0%20480%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M240%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M120%20520%20h40%20v40%20h-40%20Z%20M160%20520%20h40%20v40%20h-40%20Z%20M240%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%20M440%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
 
 		   </div>
@@ -345,7 +366,7 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
         <span class="text-brand-location text-2xl font-bold italic">Mount Fuji, Japan!</span>
 
         <p>
-          Every week we feature a new region in higher detail. Right now, we’ve got
+          Every week we feature a new region in higher detail. Right now, we've got
           Mount Fuji and the surrounding areas fully voxelized at a super high resolution,
           letting you climb a real-world mountain block by block.
         </p>
@@ -368,7 +389,10 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
 
       <div 
       slot="hero-content-right" 
-      class="relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+      class="pixel-frame relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+      data-parallax-frame="true"
+      data-parallax-speed="1.9"
+      data-parallax-max="100"
       >
       <!-- The image is absolutely positioned to fill the container -->
       <Picture
@@ -378,12 +402,12 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
         alt="Pixel Block Demo"
         loading="eager"
         fetchpriority="high"
-        class="absolute inset-0 w-full h-full object-cover"
+        class="pixel-frame__image absolute inset-0 w-full h-full object-cover z-[2]"
       />
       
       <!-- Overlay is also absolutely positioned, ensuring perfect alignment -->
       <div
-        class="absolute inset-0 pointer-events-none z-10"
+        class="pixel-frame__overlay absolute inset-0 pointer-events-none"
        style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M40%200%20h40%20v40%20h-40%20Z%20M80%200%20h40%20v40%20h-40%20Z%20M120%200%20h40%20v40%20h-40%20Z%20M160%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M320%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M440%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M480%2040%20h40%20v40%20h-40%20Z%20M0%2080%20h40%20v40%20h-40%20Z%20M80%2080%20h40%20v40%20h-40%20Z%20M120%2080%20h40%20v40%20h-40%20Z%20M440%2080%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M40%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M320%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
       </div>
       </div>
@@ -405,7 +429,7 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
           <h2 slot="heading-title" class="font-black h4 text-center mt-0 mb-4">What Our Explorers Say...</h2>
           <div slot="heading-content">
             <p class="text-center">
-              Don’t just take our word for it. Check out these community impressions about
+              Don't just take our word for it. Check out these community impressions about
               exploring real-world data in Minecraft through Voxel Earth.
             </p>
 
@@ -455,14 +479,14 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
         <h2 slot="heading-title" class="font-black text-brand-green h2 my-4">Future Expansions</h2>
         <div slot="heading-content">
           <p>
-            We’re rolling out support for more data sources—like Cesium’s Moon or Mars tiles—and
+            We're rolling out support for more data sources&mdash;like Cesium's Moon or Mars tiles&mdash;and
             plan to add community-driven voxel builds. Our ultimate goal? A living, breathing,
             ever-updating representation of Earth (and beyond) in Minecraft!
           </p>
 
           <p>
-            Join the conversation on our Discord (coming soon) or follow project updates
-            on <a href="https://paper.voxelearth.org" class="link">paper.voxelearth.org</a>. 
+            Join the conversation on our <a href="https://discord.gg/8MK8J9EQGe" class="link">Discord</a> or follow project updates
+            on <a href="https://research.voxelearth.org" class="link">research.voxelearth.org</a>. 
             Let's shape the future of Minecraft cartography together.
           </p>
 
@@ -486,7 +510,10 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
 
 		<div 
 		slot="hero-content-right" 
-		class="relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+		class="pixel-frame relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+		data-parallax-frame="true"
+		data-parallax-speed="1.7"
+		data-parallax-max="85"
 	  >
 		<!-- The image is absolutely positioned to fill the container -->
 		<Picture
@@ -496,12 +523,12 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
 		  alt="Pixel Block Demo"
 		  loading="eager"
 		  fetchpriority="high"
-		  class="absolute inset-0 w-full h-full object-cover"
+		  class="pixel-frame__image absolute inset-0 w-full h-full object-cover z-[2]"
 		/>
 	  
 		<!-- Overlay is also absolutely positioned, ensuring perfect alignment -->
 		<div
-		  class="absolute inset-0 pointer-events-none z-10"
+		  class="pixel-frame__overlay absolute inset-0 pointer-events-none"
 		 style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M40%200%20h40%20v40%20h-40%20Z%20M80%200%20h40%20v40%20h-40%20Z%20M120%200%20h40%20v40%20h-40%20Z%20M160%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M320%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M440%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M480%2040%20h40%20v40%20h-40%20Z%20M0%2080%20h40%20v40%20h-40%20Z%20M80%2080%20h40%20v40%20h-40%20Z%20M120%2080%20h40%20v40%20h-40%20Z%20M440%2080%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M40%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M320%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
 		</div>
 	  </div>
@@ -509,7 +536,7 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
     </Hero>
   </Section>
 
-  <!-- Contact / “Drop By” -->
+  <!-- Contact / "Drop By" -->
   <Section class:list={"bg-white"}>
     <Hero>
       <div slot="hero-content-left" class="prose max-w-none">
@@ -522,7 +549,7 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
           </p>
 
           <span class="text-brand-red font-medium">
-            ✔ Want a new location voxelized? Let us know!
+            &#10003; Want a new tileset voxelized? Let us know!
           </span>
 
           <div class="mt-8">
@@ -544,7 +571,10 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
 
       <div 
       slot="hero-content-right" 
-      class="relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+      class="pixel-frame relative w-full max-w-[520px] aspect-[13/14] mx-auto"
+      data-parallax-frame="true"
+      data-parallax-speed="1.5"
+      data-parallax-max="75"
       >
       <!-- The image is absolutely positioned to fill the container -->
       <Picture
@@ -554,16 +584,150 @@ import Dessert2 from "~/assets/images/screen/download (4).jpg";
         alt="Pixel Block Demo"
         loading="eager"
         fetchpriority="high"
-        class="absolute inset-0 w-full h-full object-cover"
+        class="pixel-frame__image absolute inset-0 w-full h-full object-cover z-[2]"
       />
       
       <!-- Overlay is also absolutely positioned, ensuring perfect alignment -->
       <div
-        class="absolute inset-0 pointer-events-none z-10"
+        class="pixel-frame__overlay absolute inset-0 pointer-events-none"
        style="background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22560%22%3E%0A%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200%20h40%20v40%20h-40%20Z%20M40%200%20h40%20v40%20h-40%20Z%20M80%200%20h40%20v40%20h-40%20Z%20M120%200%20h40%20v40%20h-40%20Z%20M160%200%20h40%20v40%20h-40%20Z%20M280%200%20h40%20v40%20h-40%20Z%20M320%200%20h40%20v40%20h-40%20Z%20M400%200%20h40%20v40%20h-40%20Z%20M440%200%20h40%20v40%20h-40%20Z%20M480%200%20h40%20v40%20h-40%20Z%20M0%2040%20h40%20v40%20h-40%20Z%20M40%2040%20h40%20v40%20h-40%20Z%20M320%2040%20h40%20v40%20h-40%20Z%20M480%2040%20h40%20v40%20h-40%20Z%20M0%2080%20h40%20v40%20h-40%20Z%20M80%2080%20h40%20v40%20h-40%20Z%20M120%2080%20h40%20v40%20h-40%20Z%20M440%2080%20h40%20v40%20h-40%20Z%20M480%20200%20h40%20v40%20h-40%20Z%20M0%20280%20h40%20v40%20h-40%20Z%20M40%20280%20h40%20v40%20h-40%20Z%20M0%20320%20h40%20v40%20h-40%20Z%20M40%20480%20h40%20v40%20h-40%20Z%20M320%20480%20h40%20v40%20h-40%20Z%20M480%20480%20h40%20v40%20h-40%20Z%20M0%20520%20h40%20v40%20h-40%20Z%20M40%20520%20h40%20v40%20h-40%20Z%20M80%20520%20h40%20v40%20h-40%20Z%20M280%20520%20h40%20v40%20h-40%20Z%20M320%20520%20h40%20v40%20h-40%20Z%20M360%20520%20h40%20v40%20h-40%20Z%20M400%20520%20h40%20v40%20h-40%20Z%22%20%2F%3E%0A%3C%2Fsvg%3E') no-repeat center / cover;">
       </div>
       </div>
 
     </Hero>
   </Section>
+  <script slot="scripts" is:inline>
+    (() => {
+      const DEBUG = location.search.includes("debugParallax=1");
+
+      if (!document.getElementById("ve-parallax-hardcss")) {
+        const s = document.createElement("style");
+        s.id = "ve-parallax-hardcss";
+        s.textContent =
+          "[data-parallax-frame]{position:relative;overflow:hidden;isolation:isolate}" +
+          "[data-parallax-frame] picture,[data-parallax-frame] img{position:absolute;inset:0;width:100%;height:100%;display:block}" +
+          "[data-parallax-frame] picture>img{object-fit:cover}";
+        document.head.appendChild(s);
+      }
+
+      const minScaleNeeded = (travel, h) => 1 + (2 * travel) / Math.max(h, 1);
+      let raf = 0;
+      const frames = [];
+
+      function collect() {
+        frames.length = 0;
+        document.querySelectorAll("[data-parallax-frame]").forEach((frame) => {
+          const img = frame.querySelector("picture > img, img");
+          if (!img) return;
+
+          const travel = Number(frame.dataset.parallaxMax || 60);
+          const speed = Number(frame.dataset.parallaxSpeed || 1);
+          const rect = frame.getBoundingClientRect();
+          const height = rect.height || img.getBoundingClientRect().height || 1;
+          const requestedScale = Number(frame.dataset.parallaxScale || 0);
+          const scale = Math.max(requestedScale, minScaleNeeded(travel, height), 1.02);
+
+          img.style.position ||= "absolute";
+          img.style.inset ||= "0";
+          img.style.width ||= "100%";
+          img.style.height ||= "100%";
+          img.style.objectFit ||= "cover";
+          img.style.willChange = "transform";
+          img.style.setProperty("transform", `translate3d(0,0,0) scale(${scale})`, "important");
+
+          frames.push({ frame, img, travel, speed, scale });
+          if (DEBUG) console.log("[parallax] init", { travel, speed, scale, height });
+        });
+        update(); // initial paint
+      }
+
+      function update() {
+        raf = 0;
+        const vh = window.innerHeight;
+        const center = vh / 2;
+
+        frames.forEach((f) => {
+          const rect = f.frame.getBoundingClientRect();
+          const frameCenter = rect.top + rect.height / 2;
+          const norm = Math.max(-1, Math.min(1, (center - frameCenter) / vh));
+          const y = norm * f.travel * f.speed;
+          f.img.style.setProperty(
+            "transform",
+            `translate3d(0, ${y.toFixed(2)}px, 0) scale(${f.scale})`,
+            "important",
+          );
+        });
+      }
+
+      const requestUpdate = () => {
+        if (!raf) raf = requestAnimationFrame(update);
+      };
+
+      function init() {
+        collect();
+        requestUpdate();
+      }
+
+      document.addEventListener("astro:page-load", () => {
+        collect();
+        requestUpdate();
+      });
+      window.addEventListener("scroll", requestUpdate, { passive: true });
+      window.addEventListener("resize", requestUpdate);
+
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        init();
+      } else {
+        document.addEventListener("DOMContentLoaded", init, { once: true });
+      }
+    })();
+  </script>
+  <script slot="scripts" is:inline>
+    (() => {
+      let observer;
+      let pills = [];
+
+      const setFilled = (el, filled) => {
+        el.setAttribute("data-pill-filled", filled ? "true" : "false");
+      };
+
+      const initObserver = () => {
+        if (observer) observer.disconnect();
+        observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const nearViewport = entry.isIntersecting && entry.intersectionRatio >= 0.6;
+              setFilled(entry.target, nearViewport);
+            });
+          },
+          {
+            threshold: [0, 0.4, 0.6, 0.8, 1],
+            rootMargin: "-10% 0px -10% 0px",
+          },
+        );
+
+        pills.forEach((pill) => {
+          setFilled(pill, false);
+          observer.observe(pill);
+        });
+      };
+
+      const collectPills = () => {
+        pills = Array.from(document.querySelectorAll(".pill-badge"));
+      };
+
+      const initialize = () => {
+        collectPills();
+        initObserver();
+      };
+
+      document.addEventListener("astro:page-load", initialize);
+
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        initialize();
+      } else {
+        document.addEventListener("DOMContentLoaded", initialize, { once: true });
+      }
+    })();
+  </script>
 </Layout>

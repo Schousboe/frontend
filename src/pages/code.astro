@@ -2,6 +2,9 @@
 import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
 import { getCollection } from "astro:content";
+import ExportPreviewVideo from "~/assets/images/screen/video.mp4";
+import Linux from "~/assets/images/screen/linux.png";
+import { Picture, Image } from "astro:assets";
 
 const repoGroups = await getCollection("repos");
 const repoCards = repoGroups.flatMap((group) =>
@@ -11,7 +14,7 @@ const repoCards = repoGroups.flatMap((group) =>
 	}))
 );
 
-const paperUrl = "https://paper.voxelearth.org";
+const paperUrl = "https://research.voxelearth.org";
 const gitHubOrgUrl = "https://github.com/VoxelEarth";
 
 const paperCard = {
@@ -65,6 +68,76 @@ const pageMeta = {
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17 17 7M9 7h8v8" />
 					</svg>
 				</a>
+			</div>
+		</div>
+	</Section>
+
+	<Section class="bg-gradient-to-b from-white via-emerald-50/40 to-white">
+		<div class="grid gap-8 lg:grid-cols-2">
+			<div class="rounded-[32px] border border-brand-green/30 bg-white/90 p-10 shadow-[0_25px_60px_rgba(22,101,76,0.12)]">
+				<p class="text-xs font-semibold uppercase tracking-[0.45em] text-brand-green/70">Want to host your own?</p>
+				<h2 class="mt-3 text-3xl font-black text-slate-900">Spin up your own Earth</h2>
+				<div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 shadow-inner">
+					<Picture
+						src={Linux}
+						alt="Voxel Earth Single Scene export preview"
+						class="w-full object-cover"
+						loading="lazy"
+					/>
+				</div>
+				<p class="mt-4 text-lg leading-relaxed text-slate-600">
+					You&rsquo;ll need WSL2, Ubuntu, and an NVIDIA GPU. Clone <a class="underline decoration-brand-green/50 decoration-2 underline-offset-4" href="https://github.com/VoxelEarth/DynamicLoader" target="_blank" rel="noopener noreferrer">DynamicLoader</a>,
+					open Windows Subsystem for Linux (Ubuntu), and run <code class="rounded bg-slate-900/90 px-2 py-1 text-sm text-white">./setup.sh</code>.
+					The script downloads Velocity, drops in the plugin, and wires up the warm server pool so your lobby can create new Voxel Earth sessions on demand.
+				</p>
+				<div class="mt-6 space-y-3 text-base text-slate-600">
+					<p class="flex items-start gap-3">
+						<span class="mt-1 inline-flex size-5 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">1</span>
+						<span>Install <strong>WSL2 + Ubuntu</strong> and make sure the NVIDIA drivers are available inside WSL.</span>
+					</p>
+					<p class="flex items-start gap-3">
+						<span class="mt-1 inline-flex size-5 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">2</span>
+						<span>Clone the repo and run <strong>./setup.sh</strong>; it bootstraps Velocity, copies configs, and installs dependencies.</span>
+					</p>
+					<p class="flex items-start gap-3">
+						<span class="mt-1 inline-flex size-5 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">3</span>
+						<span>Start Velocity with the generated config and watch DynamicLoader spin up regions as players connect.</span>
+					</p>
+				</div>
+			</div>
+
+			<div class="rounded-[32px] border border-brand-green/20 bg-white/80 p-10 shadow-[0_25px_60px_rgba(0,0,0,0.08)]">
+				<p class="text-xs font-semibold uppercase tracking-[0.45em] text-rose-500/70">Just need a schematic?</p>
+				<h2 class="mt-3 text-3xl font-black text-slate-900">Export locations in your browser</h2>
+				<div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 shadow-inner bg-slate-900/80">
+					<video
+						src={ExportPreviewVideo}
+						autoplay
+						loop
+						muted
+						playsinline
+						class="h-full w-full object-cover"
+					/>
+				</div>
+				<p class="mt-5 text-lg leading-relaxed text-slate-600">
+					Head to <a class="underline decoration-rose-400/60 decoration-2 underline-offset-4" href="https://beta.voxelearth.org" target="_blank" rel="noopener noreferrer">beta.voxelearth.org</a>,
+					click the <strong>Single Scene</strong> toggle in the top-left, and pan anywhere on the planet. You&rsquo;ll get a live Minecraft preview plus export options for
+					<strong>NBT</strong>, <strong>schem</strong>, or <strong>mcfunction</strong>. Perfect when you just need a skyline or landmark for your own world.
+				</p>
+				<ul class="mt-5 space-y-2 text-base text-slate-600">
+					<li class="flex items-start gap-3">
+						<span class="mt-1 inline-flex size-3 rounded-full bg-rose-500"></span>
+						<span>Select <strong>any coordinate</strong> and see voxel fidelity before you export.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="mt-1 inline-flex size-3 rounded-full bg-rose-500"></span>
+						<span>Exports ship as <strong>NBT / schem / mcfunction</strong> so they drop into WorldEdit, Amulet, or raw data packs.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="mt-1 inline-flex size-3 rounded-full bg-rose-500"></span>
+						<span>No GPU required&mdash;the heavy lifting happens on your browser.</span>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</Section>

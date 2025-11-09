@@ -2,6 +2,7 @@
 import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
 import Heading from "~/components/Heading.astro";
+import { discord } from "~/data/config";
 
 const serverInfo = {
 	name: "Voxel Earth",
@@ -10,14 +11,14 @@ const serverInfo = {
 	playersOnline: 182,
 	maxPlayers: 320,
 	ping: 42,
-	motd: ["Photoreal cities & RTX ready chunks", "Type /play for guided tours!"],
+	motd: ["Type /visit <place> to jump anywhere in the world.", "Explore real-world places rebuilt as Minecraft voxels!"],
 	logo: "/icons/android-chrome-192x192.png",
 };
 
 const pageMeta = {
 	title: "Play",
 	pageTitle: "Play | Voxel Earth",
-	description: "Connect to play.voxelearth.org to explore photoreal cities rebuilt as Minecraft voxels.",
+	description: "Connect to play.voxelearth.org and use /visit to explore real-world places rebuilt as Minecraft voxels.",
 };
 ---
 
@@ -26,7 +27,7 @@ const pageMeta = {
     <Heading>
       <h2 slot="heading-title" class="font-black text-brand-green h2">Play now</h2>
       <p slot="heading-content" class="text-pretty">
-        Connect to our Minecraft server at <code>play.voxelearth.org</code>. 
+        Connect to our Minecraft server at <code>play.voxelearth.org</code> and type <code>/visit</code> plus any city or landmark to beam there instantly.
       </p>
     </Heading>
 
@@ -53,6 +54,35 @@ const pageMeta = {
             <span class="text-white">{line}</span>
           </div>
         ))}
+      </div>
+    </div>
+  </Section>
+
+  <Section class="bg-white">
+    <div class="mx-auto flex max-w-5xl flex-col gap-8 rounded-[36px] border border-brand-green/30 bg-gradient-to-br from-emerald-50 via-white to-emerald-100 p-10 shadow-[0_24px_60px_rgba(0,0,0,0.08)] lg:flex-row lg:items-center lg:justify-between">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.45em] text-brand-green/70">Community Servers</p>
+        <h2 class="mt-3 text-3xl font-black text-slate-900">Have your own Voxel Earth realm?</h2>
+        <p class="mt-4 text-lg leading-relaxed text-slate-600">
+          We keep a public list of community servers so explorers can jump into new regions anytime. If you're running your own instance,
+          share the details and we'll feature it here too!
+        </p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <a
+          href={discord.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center rounded-full bg-brand-green px-8 py-3 text-base font-semibold uppercase tracking-[0.25em] text-white shadow-lg transition hover:bg-brand-green/90"
+        >
+          Submit via Discord
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center rounded-full border border-brand-green/40 bg-white px-8 py-3 text-base font-semibold uppercase tracking-[0.2em] text-brand-green shadow-sm transition hover:border-brand-green"
+        >
+          Contact Us
+        </a>
       </div>
     </div>
   </Section>
